@@ -49,3 +49,7 @@ https://huggingface.co/MattStammers/ppo-MountainCar-v0-fullcoded
 4. Step 4
 
 Now its time to take on the lunarlander. This is a more complex environment so I have increased the bactch sizes, reduced the training rate and started with 100,000 training steps. Let's see how we go!
+
+Ok so this was not that successful. You can see all the passengers have been killed:
+
+[!Landerv1](https://github.com/MattStammers/PPO_Lander_Implementation/blob/main/video/LunarLander-v1.gif)
