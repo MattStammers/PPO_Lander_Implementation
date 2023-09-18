@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-gym = {version = "0.22" , extras = ["box2d"]}
+gym = "==0.22"
 torch = "*"
 stable-baselines3 = "*"
 tensorboard = "*"
@@ -15,6 +15,7 @@ ipywidgets = "*"
 huggingface_hub = "*"
 imageio = {version = "*" , extras = ["ffmpeg", "pyav"]}
 wasabi = "*"
+moviepy = "*"
 
 [dev-packages]
 

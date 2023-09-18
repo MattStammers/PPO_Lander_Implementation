@@ -1,4 +1,4 @@
-# docs and experiment results can be found at https://docs.cleanrl.dev/rl-algorithms/ppo/#ppopy
+# PPO Implementation
 
 import argparse
 import os
@@ -24,10 +24,11 @@ import json
 import shutil
 import imageio
 
+import wandb
+
 from wasabi import Printer
 
 msg = Printer()
-
 
 def parse_args():
     # fmt: off
@@ -40,19 +41,19 @@ def parse_args():
         help="if toggled, `torch.backends.cudnn.deterministic=False`")
     parser.add_argument("--cuda", type=lambda x: bool(strtobool(x)), default=True, nargs="?", const=True,
         help="if toggled, cuda will be enabled by default")
-    parser.add_argument("--track", type=lambda x: bool(strtobool(x)), default=False, nargs="?", const=True,
+    parser.add_argument("--track", type=lambda x: bool(strtobool(x)), default=True, nargs="?", const=True,
         help="if toggled, this experiment will be tracked with Weights and Biases")
     parser.add_argument("--wandb-project-name", type=str, default="cleanRL",
         help="the wandb's project name")
     parser.add_argument("--wandb-entity", type=str, default=None,
         help="the entity (team) of wandb's project")
-    parser.add_argument("--capture-video", type=lambda x: bool(strtobool(x)), default=False, nargs="?", const=True,
+    parser.add_argument("--capture-video", type=lambda x: bool(strtobool(x)), default=True, nargs="?", const=True,
         help="weather to capture videos of the agent performances (check out `videos` folder)")
 
     # Algorithm specific arguments
     parser.add_argument("--env-id", type=str, default="CartPole-v1",
         help="the id of the environment")
-    parser.add_argument("--total-timesteps", type=int, default=50000,
+    parser.add_argument("--total-timesteps", type=int, default=100000,
         help="total timesteps of the experiments")
     parser.add_argument("--learning-rate", type=float, default=2.5e-4,
         help="the learning rate of the optimizer")
@@ -595,4 +596,4 @@ if __name__ == "__main__":
         hyperparameters=args,
         eval_env=gym.make(args.env_id),
         logs=f"runs/{run_name}",
-    )#
+    )
