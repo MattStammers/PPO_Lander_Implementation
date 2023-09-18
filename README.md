@@ -55,3 +55,31 @@ Ok so sadly all on board have perished:
 ![LunarLanderv1](https://github.com/MattStammers/PPO_Lander_Implementation/blob/main/video/LunarLander-v1.gif)
 
 Now let's try to increase the timesteps to a million and see if we get a better result:
+
+![LunarLanderv2](https://github.com/MattStammers/PPO_Lander_Implementation/blob/main/video/LunarLander-v2.gif)
+
+This time is marginally better but they still don't land. If we look at the training we can see that the training is very lumpy:
+
+![Training1](https://github.com/MattStammers/PPO_Lander_Implementation/blob/main/images/Lumpy_Training.JPG)
+
+I could at this point remove the random seeding in order to debug but I don't really want to do that. Instead I doubled the batch size to 2048 and made the network bigger doubling the nodes from 64 to 128.
+
+However, I noticed while doing this that the losses/entropy dropped off really quickly which is a poor price to pay for stability so I terminated the run and tried the same architecture this time with a smaller learning rate of 2.5e-5 rather than 4. This kept the entropy much higher and also dropped the loss (purple run = 4). 
+
+![Training2](https://github.com/MattStammers/PPO_Lander_Implementation/blob/main/images/First_Four_Trainings.JPG)
+
+This also gave me better overall losses/value_loss returns. Training was still a bit spiky but seemed to be heading in the right direction as by 500,000 timesteps I was starting to get a few positive scores this time but the final result was still not good.
+
+Next I wondered if perhaps increasing the number of environments running in parallel might improve the training experience so I increased these from 4 to 16 with now 2 million timesteps (run 5) and also increasing the clip-coefficient to make sure the policy updates properly (run 6) but this actually made things worse.
+
+For run 7 I increased the learning rate again back to and halved the clip rate back to 2.5e-4. This seemed to help so I then reduced the step-size back to 1024. This time at 500,000 steps I started getting some consistently positive results and the training times started to jump accordingly.  I was reading this thesis while doing it: https://fse.studenttheses.ub.rug.nl/25709/1/mAI_2021_BickD.pdf which really helped me understand the PPO architecture and the clip function. This ultimately led to being able to unravel the puzzle in 8 attempts. The lander doesn't always land but there is at least a chance of survival this time ;D:
+
+![LunarLanderv2](https://github.com/MattStammers/PPO_Lander_Implementation/blob/main/video/LunarLander-v3.gif)
+
+Here is the training dasbhoard:
+
+![Training3](https://github.com/MattStammers/PPO_Lander_Implementation/blob/main/images/First_Four_Trainings.JPG)
+
+and here is the final huggingface repo:
+
+![HuggingFace_Repo](https://huggingface.co/MattStammers/ppo-LunarLander-v2-fullcoded)
