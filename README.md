@@ -15,8 +15,8 @@ Firstly I made sure that everything was working correctly using CartPole-v1 and 
 
 This gave me the following result:
 
-!(https://github.com/MattStammers/PPO_Lander_Implementation/blob/main/videos/CartPole-v1__ppo__1__1695047933/CartPole-v1.gif)
+![CartPole](https://github.com/MattStammers/PPO_Lander_Implementation/blob/main/videos/CartPole-v1__ppo__1__1695047933/CartPole-v1.gif)
 
 and a score of 257.70+/- 91.25 with the following very jumpy training:
 
-!(https://github.com/MattStammers/PPO_Lander_Implementation/blob/main/images/CartPole-v1.JPG)
+![Training](https://github.com/MattStammers/PPO_Lander_Implementation/blob/main/images/CartPole-v1.JPG)
