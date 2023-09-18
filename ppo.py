@@ -43,7 +43,7 @@ def parse_args():
         help="if toggled, cuda will be enabled by default")
     parser.add_argument("--track", type=lambda x: bool(strtobool(x)), default=True, nargs="?", const=True,
         help="if toggled, this experiment will be tracked with Weights and Biases")
-    parser.add_argument("--wandb-project-name", type=str, default="cleanRL",
+    parser.add_argument("--wandb-project-name", type=str, default="PPO_Cartpole-v1",
         help="the wandb's project name")
     parser.add_argument("--wandb-entity", type=str, default=None,
         help="the entity (team) of wandb's project")
@@ -53,9 +53,9 @@ def parse_args():
     # Algorithm specific arguments
     parser.add_argument("--env-id", type=str, default="CartPole-v1",
         help="the id of the environment")
-    parser.add_argument("--total-timesteps", type=int, default=100000,
+    parser.add_argument("--total-timesteps", type=int, default=1000000,
         help="total timesteps of the experiments")
-    parser.add_argument("--learning-rate", type=float, default=2.5e-4,
+    parser.add_argument("--learning-rate", type=float, default=2.5e-5,
         help="the learning rate of the optimizer")
     parser.add_argument("--num-envs", type=int, default=4,
         help="the number of parallel game environments")
@@ -75,7 +75,7 @@ def parse_args():
         help="the K epochs to update the policy")
     parser.add_argument("--norm-adv", type=lambda x: bool(strtobool(x)), default=True, nargs="?", const=True,
         help="Toggles advantages normalization")
-    parser.add_argument("--clip-coef", type=float, default=0.2,
+    parser.add_argument("--clip-coef", type=float, default=0.1,
         help="the surrogate clipping coefficient")
     parser.add_argument("--clip-vloss", type=lambda x: bool(strtobool(x)), default=True, nargs="?", const=True,
         help="Toggles whether or not to use a clipped loss for the value function, as per the paper.")
