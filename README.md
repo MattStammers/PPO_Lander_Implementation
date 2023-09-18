@@ -6,7 +6,7 @@ By Matt Stammers
 
 After now spending 3 months learning reinforcement learning it is now time to write out a full PPO implementation for the lunar-lander environment. 
 
-This is based on Costa Huang's excellent tutorial [PPO_Tutorial](youtube.com/watch?v=MEt6rrxH8W4)
+This is based on Costa Huang's excellent tutorial [PPO_Tutorial](https://www.youtube.com/watch?v=MEt6rrxH8W4)
 
 ## Starting Out
 1. Step 1
