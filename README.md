@@ -4,7 +4,7 @@ By Matt Stammers
 
 18/09/2023
 
-After now spending 3 months learning re-inforcement learning it is now time to write out a full PPO implementation for the lunar-lander environment. 
+After now spending 3 months learning reinforcement learning it is now time to write out a full PPO implementation for the lunar-lander environment. 
 
 This is based on Costa Huang's excellent tutorial [PPO_Tutorial](youtube.com/watch?v=MEt6rrxH8W4)
 
@@ -15,7 +15,7 @@ Firstly I made sure that everything was working correctly using CartPole-v1 and 
 
 This gave me the following result:
 
-![CartPole](https://github.com/MattStammers/PPO_Lander_Implementation/blob/main/video/CartPole-v1.gif)
+![CartPole](https://github.com/MattStammers/PPO_Lander_Implementation/blob/main/video/CartPole-v1-run1.gif)
 
 and a score of 257.70+/- 91.25 with the following very jumpy training:
 
