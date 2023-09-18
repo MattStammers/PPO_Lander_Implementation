@@ -39,7 +39,7 @@ It wasn't too bad and I got -124+/-- 35.38 which is not amazing but also not ter
 
 Here is the video of it during training:
 
-[!MountainCar](https://github.com/MattStammers/PPO_Lander_Implementation/blob/main/video/MountainCar-v0.gif)
+![MountainCar](https://github.com/MattStammers/PPO_Lander_Implementation/blob/main/video/MountainCar-v0.gif)
 
 and here is the link to the final result:
 
