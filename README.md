@@ -32,3 +32,10 @@ To fix the jumpy training I reduced the learning and clip rates while increasing
 3. Step 3
 
 Now before going back to lunar-lander I want to try and make this work on the MountainCar-v0 environment because I have never tried this environment before and will need to think carefully to make it work.
+
+Iniitally this one absolutely sucked but I gradually increased the learning rate and by 2.5e-3 after about 150,000 timesteps I started getting some better than base (-200) return. I jacked the training steps up to and started getting some very good results by 500,000 steps but they were inconsistent so I continued the training to 1 million.By this point it didn't seem to be getting any better so I stopped it.
+
+It wasn't too bad and I got -124+/-- 35.38 which is not amazing but also not terrible, especially given that I have never even looked at this particular environment before.
+
+Here is the video and the training stats:
+

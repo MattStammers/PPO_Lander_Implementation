@@ -43,7 +43,7 @@ def parse_args():
         help="if toggled, cuda will be enabled by default")
     parser.add_argument("--track", type=lambda x: bool(strtobool(x)), default=True, nargs="?", const=True,
         help="if toggled, this experiment will be tracked with Weights and Biases")
-    parser.add_argument("--wandb-project-name", type=str, default="PPO_Cartpole-v1",
+    parser.add_argument("--wandb-project-name", type=str, default="PPO_Mountain_Carv0",
         help="the wandb's project name")
     parser.add_argument("--wandb-entity", type=str, default=None,
         help="the entity (team) of wandb's project")
@@ -51,11 +51,11 @@ def parse_args():
         help="weather to capture videos of the agent performances (check out `videos` folder)")
 
     # Algorithm specific arguments
-    parser.add_argument("--env-id", type=str, default="CartPole-v1",
+    parser.add_argument("--env-id", type=str, default="MountainCar-v0",
         help="the id of the environment")
     parser.add_argument("--total-timesteps", type=int, default=1000000,
         help="total timesteps of the experiments")
-    parser.add_argument("--learning-rate", type=float, default=2.5e-5,
+    parser.add_argument("--learning-rate", type=float, default=2.5e-3,
         help="the learning rate of the optimizer")
     parser.add_argument("--num-envs", type=int, default=4,
         help="the number of parallel game environments")
@@ -67,7 +67,7 @@ def parse_args():
         help="Use GAE for advantage computation")
     parser.add_argument("--gamma", type=float, default=0.99,
         help="the discount factor gamma")
-    parser.add_argument("--gae-lambda", type=float, default=0.95,
+    parser.add_argument("--gae-lambda", type=float, default=0.9,
         help="the lambda for the general advantage estimation")
     parser.add_argument("--num-minibatches", type=int, default=4,
         help="the number of mini-batches")
@@ -89,7 +89,7 @@ def parse_args():
         help="the target KL divergence threshold")
 
     # Adding HuggingFace argument
-    parser.add_argument("--repo-id", type=str, default="MattStammers/ppo-CartPole-v1-fullcoded", help="id of the model repository from the Hugging Face Hub {username/repo_name}")
+    parser.add_argument("--repo-id", type=str, default="MattStammers/ppo-MountainCar-v0-fullcoded", help="id of the model repository from the Hugging Face Hub {username/repo_name}")
 
     args = parser.parse_args()
     args.batch_size = int(args.num_envs * args.num_steps)
