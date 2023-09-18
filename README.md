@@ -78,8 +78,10 @@ For run 7 I increased the learning rate again back to and halved the clip rate b
 
 Here is the training dasbhoard:
 
-![Training3](https://github.com/MattStammers/PPO_Lander_Implementation/blob/main/images/First_Four_Trainings.JPG)
+![Training3](https://github.com/MattStammers/PPO_Lander_Implementation/blob/main/images/Deep_Reinforcement_Training.JPG)
 
 and here is the final huggingface repo:
 
-![HuggingFace_Repo](https://huggingface.co/MattStammers/ppo-LunarLander-v2-fullcoded)
+[HuggingFace_Repo](https://huggingface.co/MattStammers/ppo-LunarLander-v2-fullcoded)
+
+I am very grateful to huggingface for setting me up well to explore this further and plan to repay the favour by using them to host many of our open source models.
