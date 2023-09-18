@@ -44,3 +44,8 @@ Here is the video of it during training:
 and here is the link to the final result:
 
 https://huggingface.co/MattStammers/ppo-MountainCar-v0-fullcoded 
+
+## LunarLander
+4. Step 4
+
+Now its time to take on the lunarlander. This is a more complex environment so I have increased the bactch sizes, reduced the training rate and started with 100,000 training steps. Let's see how we go!
